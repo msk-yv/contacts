@@ -27,7 +27,7 @@
     function contact_search($link, $search){
         $query = "SELECT * FROM contacts WHERE `name` like '%".$search."%' or `phone` like '%".$search."%' or `email` like '%".$search."%' ORDER BY id ";
         $result = mysqli_query($link, $query);
-        
+
         if (!$result)
             die(mysqli_error($link));
         
@@ -40,5 +40,38 @@
         }
         return $contacts;
     } 
-    //select * from `contacts` where `name` like "%y%" or `phone` like "%y%" or `email` like "%y%"
+    //contacts_getById($link, $_GET['id'])
+    function contacts_getById($link, $ID){
+        $query = "SELECT * FROM contacts WHERE id=".$ID." ";
+        $result = mysqli_query($link, $query);
+        
+        if (!$result)
+            die(mysqli_error($link));
+        
+        $contacts = array(mysqli_fetch_assoc($result));
+            
+        
+        return $contacts;
+    }
+    //contact_update($link, $_POST['name'], $_POST['name'], $_POST['phone'], $_POST['email']);
+    //UPDATE `contacts`.`contacts` SET `name`='yr', `phone`='1234', `email`='qwe@qwe1.ru' WHERE `id`='3'
+    function contact_update($link, $ID, $name, $phone, $email){
+        $query = "UPDATE `contacts`.`contacts` SET `name`='".$name."', `phone`='".$phone."', `email`='".$email."' WHERE `id`='$ID';";
+        $result = mysqli_query($link, $query);
+        
+        if (!$result)
+            die(mysqli_error($link));
+
+        return ;
+    }
+    
+    function contact_delete($link, $ID){
+        $query = "DELETE FROM `contacts`.`contacts` WHERE `id`='".$ID."';";
+        $result = mysqli_query($link, $query);
+        
+        if (!$result)
+            die(mysqli_error($link));
+            
+        return ;
+    }
 ?>

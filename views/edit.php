@@ -27,16 +27,17 @@
             <th>Телефон</th>
             <th>Электронная почта</th>
             <th></th>
-            <th></th>
         </tr> 
         <?php foreach($contacts as $contact): ?>
+        <form action="/models/edit.php" method="post">
         <tr>
-            <td><?=$contact['name']?></td>
-            <td><?=$contact['phone']?></td>
-            <td><?=$contact['email']?></td>
-            <td><a href="/edit.php?id=<?=$contact['id']?>">Редактировать</a></td>
-            <td><a href="/delete.php?id=<?=$contact['id']?>">Удалить</a></td>
+            <td><input type="text" name='name' value="<?=$contact['name']?>" required/></td>
+            <td><input type="tel" name="phone" value="<?=$contact['phone']?>" /></td>
+            <td><input type="email" name="email" value="<?=$contact['email']?>" /></td>
+            <td><input type="submit" value="Изменить"/></td>
+            <span style="display:none"><input type="" name="id" value="<?=$contact['id']?>"/></span>
         </tr>
+        </form>
         <?php endforeach ?>
     </table>
     </div>
