@@ -1,0 +1,31 @@
+footer, header {
+    color: blue;
+    text-align: center;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    text-align: left;
+    border: 1px dash green;
+}
+
+.logo img {
+    width: 70px;
+}
+
+.rightContact {
+    text-align: right;
+}
+table{
+    border: 2px solid black;
+    margin: 50px 0;
+    align-self: center;
+}
+.wraperFirstTable{
+    text-align: center;
+}
+.insert_search {
+    background-color: aqua;
+}
