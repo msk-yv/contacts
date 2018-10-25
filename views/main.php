@@ -24,13 +24,17 @@
         <tr>
             <th>Имя контакта</th>
             <th>Телефон</th>
-            <th>мыло</th>
+            <th>Электронная почта</th>
+            <th></th>
+            <th></th>
         </tr> 
         <?php foreach($contacts as $contact): ?>
         <tr>
             <td><?=$contact['name']?></td>
             <td><?=$contact['phone']?></td>
             <td><?=$contact['email']?></td>
+            <td><a href="#">редактировать</a></td>
+            <td><a href="#">Удалить</a></td>
         </tr>
         <?php endforeach ?>
     </table>
