@@ -15,4 +15,13 @@
         }
         return $contacts;
     }
+
+    function contact_input($link, $name, $phone, $email){
+        $query = "INSERT INTO `contacts`.`contacts` (`name`, `phone`, `email`) VALUES ('".$name."', '".$phone."', '".$email."')";
+        $result = mysqli_query($link, $query);
+        
+        if (!$result)
+            die(mysqli_error($link));
+    }
+
 ?>
