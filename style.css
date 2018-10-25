@@ -29,3 +29,10 @@ table{
 .insert_search {
     background-color: aqua;
 }
+th {
+    
+    border: 1px solid green;
+}
+form {
+    margin: 10px;
+}

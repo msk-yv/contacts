@@ -14,8 +14,8 @@
             <th> Поиск </th>
         </tr> 
         <tr>
-            <td>Place to insert form</td>
-            <td>Place to search form</td>
+            <td><?php include('views/insertForm.php'); ?></td>
+            <td><?php include('views/searchForm.php'); ?></td>
         </tr>
     </table>
     </div>
